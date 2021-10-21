@@ -772,9 +772,6 @@ a {
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
-#header .header-nav .social ， {
-  ResearchGate: #008000 100;
-}
 #header .header-nav .social .新浪微博 {
   background: url("/img/新浪微博.png") center no-repeat #ecc260;
   -webkit-background-size: 80%;
@@ -882,6 +879,12 @@ a {
   -webkit-background-size: 103%;
   -moz-background-size: 103%;
   background-size: 103%;
+}
+#header .header-nav .social .ResearchGate {
+  background: url("/img/ResearchGate.png") center no-repeat #40e0d0;
+  -webkit-background-size: 90%;
+  -moz-background-size: 90%;
+  background-size: 90%;
 }
 #header .header-nav .social .GitHub {
   background: url("//cdn.bootcss.com/logos/0.2.0/github-octocat.svg") no-repeat #fff;
