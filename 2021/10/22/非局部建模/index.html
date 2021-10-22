@@ -23,7 +23,7 @@
 <meta property="og:description" content="摘要模型降阶(Reduced-Order Model, ROM)是我前段时间研究用到的数学工具。其思想早在上个世纪70年代就出现在工程界的研究中，主要用于集成电路、计算流体力学、自动控制等领域。经过几十年的发展，已经成为一种系统的数学理论方法和应用工具。在众多模型降阶方法中，本征正交分解(Proper Orthogonal Decomposition, POD)[1]是常用的基于数据驱动的讲解方法">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-10-22T01:19:47.000Z">
-<meta property="article:modified_time" content="2021-10-22T02:11:33.160Z">
+<meta property="article:modified_time" content="2021-10-22T02:47:28.684Z">
 <meta property="article:author" content="幸子">
 <meta property="article:tag" content="-计算数学 -建模">
 <meta name="twitter:card" content="summary">
@@ -314,14 +314,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>模型降阶(Reduced-Order Model, ROM)是我前段时间研究用到的数学工具。其思想早在上个世纪70年代就出现在工程界的研究中，主要用于集成电路、计算流体力学、自动控制等领域。经过几十年的发展，已经成为一种系统的数学理论方法和应用工具。在众多模型降阶方法中，本征正交分解(Proper Orthogonal Decomposition, POD)<sup>[1]</sup>是常用的基于数据驱动的讲解方法。这里简单介绍其在非局部扩散方程<sup>[2]</sup>求解中的应用。</p>
-<p> <code>&lt;!-- more --&gt;</code></p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>模型降阶(Reduced-Order Model, ROM)是我前段时间研究用到的数学工具。其思想早在上个世纪70年代就出现在工程界的研究中，主要用于集成电路、计算流体力学、自动控制等领域。经过几十年的发展，已经成为一种系统的数学理论方法和应用工具。在众多模型降阶方法中，本征正交分解(Proper Orthogonal Decomposition, POD)<sup>[1]</sup>是常用的基于数据驱动的讲解方法。这里简单介绍其在非局部扩散方程<sup>[2]</sup>求解中的应用。<span id="more"></span></p>
 <h2 id="非局部扩散方程"><a href="#非局部扩散方程" class="headerlink" title="非局部扩散方程"></a>非局部扩散方程</h2><p>在现实世界中，许多物理现象都是由方程描述。在过去的研究中，研究者们往往忽略了模型的非局部效应，仅基于物理现象的局部效应建立了大量的微分方程系统(动量守恒、质量守恒、能量守恒、力平衡、本构方程等)，并使用经典的数值方法(有限元、有限差分等)进行数值求解。同时还需要假设材料或者结构变形前、变形后都保持连续，即：质量是连续分布的、内力是一种接触力、位移是二阶连续可导的(在变分原理等表述下放松到$H^1$空间中)，其数学结构等表现是需要计算空间偏导数，这就需要自变量的连续变化、函数的连续变化。显然，随着材料的损伤会伴随着裂纹的萌生与发展，即产生新的界面，这必然破坏原有的数学结构，成为<strong>连续介质假设下数学模型所固有的局限性</strong>。尽管工程力学专家发展了各种断裂理论与技巧，总体上还是定义裂纹为新的界面，依然无法精确提供可靠且具有普适性的裂纹扩展准则。适时出现的近场动力学(Peridynamics, PD)模型<sup>[3]</sup>允许变形不连续，模型中不包含位移场的空间导数，<strong>其使用含奇异核与差分乘积的积分来表征原来模型中导数所起的作用</strong>，并引入水平参数$\delta$刻画微元间相互作用的范围大小。这样，经典连续介质理论下需要的空间导数便转化为空间局部积分，从而相关的物理守恒律、力平衡方程等呈现为相关物理量在$R^n$子域上<strong>重积分的重积分</strong>。这种模型是一种非局部(nonlocal)模型, 在建立初期就在损伤预测、裂纹扩展等方面得以被广泛应用。</p>
 <p>这里考虑如下所示的非局部扩散方程：</p>
-<p>$ \left{\begin{aligned} u_t-\mathcal L_\delta u&amp;=f,x\in\Omega,t\in[0,T] \u(x,0)&amp;=u_0(x),t=0\u(x,t)&amp;=g(x,t),x\in\Omega_I,t\in[0,T] \end{aligned}\right.$</p>
+<p>$ \left\{\begin{aligned} u_t-\mathcal L_\delta u&amp;=f,x\in\Omega,t\in[0,T] \\u(x,0)&amp;=u_0(x),t=0\\u(x,t)&amp;=g(x,t),x\in\Omega_I,t\in[0,T] \end{aligned}\right.$</p>
 <p>其中$\mathcal L_\delta$为如下定义的线性非局部扩散算子:</p>
 <p>$\mathcal L_\delta u(x) = \int_{B_\delta(x)} \rho_\delta(x,y)(u(y)-u(x))dy$</p>
-<p>其中$B_\delta(x)$为以$x$为球心半径为$\delta$的球，$\rho_\delta(x,y)$为一具有一定奇异性的核函数。可以看到，若取$\rho_\delta = \frac{1}{||x-y||^2}$, 则该非局部算子可以看做<strong>二阶中心差商的积分平均</strong>。</p>
+<p>其中, $B_\delta(x)$为以$x$为球心, 半径为$\delta$的球, $\rho_\delta(x,y)$为一具有一定奇异性的核函数。可以看到，若取$\rho_\delta = \frac{1}{||x-y||^2}$, 则该非局部算子可以看做<strong>二阶中心差商的积分平均</strong>。</p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><font size="2">
 
 <p>[1] Holmes P, Lumley J L, Berkooz G, et al. Turbulence, coherent structures, dynamical systems and symmetry[M]. Cambridge university press, 2012.</p>
@@ -339,7 +338,7 @@
         <p><span>本文标题:</span><a href="/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/">Reduced-Order Model</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页"></a></p>
         <p><span>发布时间:</span>2021-10-22, 09:19:47</p>
-        <p><span>最后更新:</span>2021-10-22, 10:11:33</p>
+        <p><span>最后更新:</span>2021-10-22, 10:47:28</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/" title="Reduced-Order Model">http://jslu.top/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/</a>
             <span class="copy-path" data-clipboard-text="原文: http://jslu.top/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -555,3 +554,4 @@ MathJax.Hub.Queue(function() {
   </div>
 </body>
 </html>
+
