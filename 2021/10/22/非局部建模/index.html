@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/10/22/natidlQ7JKhNU6B.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/22/7ZaA8p5bNWmhYPI.png">
 <meta property="article:published_time" content="2021-10-22T01:19:47.000Z">
-<meta property="article:modified_time" content="2021-10-22T10:40:20.962Z">
+<meta property="article:modified_time" content="2021-10-22T10:45:02.972Z">
 <meta property="article:author" content="幸子">
 <meta property="article:tag" content="计算数学">
 <meta property="article:tag" content="建模">
@@ -322,14 +322,14 @@
         <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>模型降阶(Reduced-Order Model, ROM)是我前段时间研究用到的数学工具。其思想早在上个世纪70年代就出现在工程界的研究中，主要用于集成电路、计算流体力学、自动控制等领域。经过几十年的发展，已经成为一种系统的数学理论方法和应用工具。在众多模型降阶方法中，本征正交分解(Proper Orthogonal Decomposition, POD)<sup>[1]</sup>是常用的基于数据驱动的讲解方法。这里简单介绍其在非局部扩散方程<sup>[2]</sup>求解中的应用。<span id="more"></span></p>
 <h2 id="非局部扩散方程"><a href="#非局部扩散方程" class="headerlink" title="非局部扩散方程"></a>非局部扩散方程</h2><p>在现实世界中，许多物理现象都是由方程描述。在过去的研究中，研究者们往往忽略了模型的非局部效应，仅基于物理现象的局部效应建立了大量的微分方程系统(动量守恒、质量守恒、能量守恒、力平衡、本构方程等)，并使用经典的数值方法(有限元、有限差分等)进行数值求解。同时还需要假设材料或者结构变形前、变形后都保持连续，即：质量是连续分布的、内力是一种接触力、位移是二阶连续可导的(在变分原理等表述下放松到$H^1$空间中)，其数学结构等表现是需要计算空间偏导数，这就需要自变量的连续变化、函数的连续变化。显然，随着材料的损伤会伴随着裂纹的萌生与发展，即产生新的界面，这必然破坏原有的数学结构，成为<strong>连续介质假设下数学模型所固有的局限性</strong>。尽管工程力学专家发展了各种断裂理论与技巧，总体上还是定义裂纹为新的界面，依然无法精确提供可靠且具有普适性的裂纹扩展准则。适时出现的近场动力学(Peridynamics, PD)模型<sup>[3]</sup>允许变形不连续，模型中不包含位移场的空间导数，<strong>其使用含奇异核与差分乘积的积分来表征原来模型中导数所起的作用</strong>，并引入水平参数$\delta$刻画微元间相互作用的范围大小。这样，经典连续介质理论下需要的空间导数便转化为空间局部积分，从而相关的物理守恒律、力平衡方程等呈现为相关物理量在$\mathbb R^n$子域上<strong>重积分的重积分</strong>。这种模型是一种非局部(nonlocal)模型, 在建立初期就在损伤预测、裂纹扩展等方面得以被广泛应用。</p>
 <p>这里考虑如下所示的非局部扩散方程：</p>
-<p>$ \left\{\begin{aligned}&amp; u_t-\mathcal L_\delta u=f,x\in\Omega,t\in[0,T] \&amp;u(x,0)=u_0(x),t=0\&amp;u(x,t)=g(x,t),x\in\Omega_I,t\in[0,T] \end{aligned}\right.\tag{1}$</p>
+<p>$ \left\{\begin{aligned} u_t-\mathcal L_\delta u=f,x\in\Omega,t\in[0,T] \\u(x,0)=u_0(x),t=0\\u(x,t)=g(x,t),x\in\Omega_I,t\in[0,T] \end{aligned}\right.\tag{1}$</p>
 <p>其中$\mathcal L_\delta$为如下定义的线性非局部扩散算子:</p>
 <p>$\mathcal L_\delta u(x) = \int_{B_\delta(x)} \rho_\delta(x,y)(u(y)-u(x))dy\tag{2}$</p>
 <p>其中, $B_\delta(x)$为以$x$为球心, 半径为$\delta$的球, $\rho_\delta(x,y)$为一具有一定奇异性的核函数。可以看到，若取$\rho_\delta = \frac{1}{||x-y||^2}$, 则该非局部算子可以看做<strong>二阶中心差商的积分平均</strong>,，$\Omega_I$表示环形边界(如图)</p>
 <img src="https://i.loli.net/2021/10/22/6qlfsOQMhc9w8SE.png" width="20%" height="20%">
 
 <h2 id="非局部算子的离散"><a href="#非局部算子的离散" class="headerlink" title="非局部算子的离散"></a>非局部算子的离散</h2><p>目前，绝大多数求解微分方程的技巧也被用于求解非局部扩散方程(1)，如有限元方法<sup>[3]</sup>，配点法<sup>[4]</sup>，谱方法<sup>[5]</sup>等。应用这类空间离散方法后，方程(1)的半离散格式可以写为如下常微分方程系统(ODEs)：</p>
-<p>$\left\{\begin{aligned} &amp;\mathbf M\frac{d\mathbf u}{dt}=\mathbf A\mathbf u+\mathbf f\&amp;\mathbf u(0)=\mathbf u_0\end{aligned} \right.\tag{3}$</p>
+<p>$\left\{\begin{aligned} \mathbf M\frac{d\mathbf u}{dt}=\mathbf A\mathbf u+\mathbf f\\\mathbf u(0)=\mathbf u_0\end{aligned} \right.\tag{3}$</p>
 <p>其中向量$\mathbf u = [u_1,u_2,…,u_N]^T$为数值解基函数的系数(一般假设空间离散后数值解可以表示为$u^h(x,t)=\sum_n u_I(t)\varphi_I(x)$，其中$\varphi_I(x)$为空间离散的基函数)，$\mathbf M$，$\mathbf A$分别对应数值离散的质量矩阵和刚度矩阵。上述ODEs可以通过如下$\theta$-scheme进行离散求解:</p>
 <p>$\mathbf M\frac{\mathbf u^{n+1}-\mathbf u^n}{\Delta t}=\theta\mathbf A\mathbf u^{n+1}+(1-\theta)\mathbf A\mathbf u^n+\theta\mathbf f^{n+1}+(1-\theta)\mathbf f^n\tag{4}$</p>
 <p>其中$\mathbf u^n$表示时刻$n\Delta t$数值解的系数。容易发现，若取$\theta = \frac{1}{2}$，(4)便退化为熟悉的Crank-Nicolson格式。此外，(4)可被化简成如下形式</p>
@@ -339,13 +339,13 @@
 <p>$\tilde {\mathbf b} = \left(\frac{\mathbf M}{\Delta t}+(1-\theta)\mathbf A\right)\mathbf u^n+\theta\mathbf f^{n+1}+(1-\theta)\mathbf f^n\tag{6b}$</p>
 <p>经时间离散(4)后，每一步时间迭代都需要求解如(5)所示的线性方程组，随着问题规模的增加，时间迭代的运算量将大幅增加。这便是我们引入模型降阶的动机。</p>
 <h2 id="降阶模型"><a href="#降阶模型" class="headerlink" title="降阶模型"></a>降阶模型</h2><p>为了引入降阶模型，我们应用POD-Galerkin方法将远高维系统投影到$\mathbb R^N$的$m$维子空间中$(m \ll N)$，则(5)将转化为一个$m$维的系统。记$\bf\Psi=[\psi_1,\psi_2,…,\psi_m]\in\mathbb R^{N\times m}$为$m$个POD基函数。通过定义如下特解$u^{ps}(t)$来记录Dirichlet型体积约束：</p>
-<p>$u^{ps}(t)=\left\{\begin{aligned}&amp;g(x,t),&amp;x\in\Omega_I\&amp;0,&amp;x\in\Omega\end{aligned}\right.\tag{7}$</p>
+<p>$u^{ps}(t)=\left\{\begin{aligned}g(x,t),x\in\Omega_I\\0,x\in\Omega\end{aligned}\right.\tag{7}$</p>
 <p>则非局部扩散问题的数值解可以被POD基函数表示如下：</p>
 <p>$\mathbf u(t)\approx{\bf\Psi}\mathbf a(t)+\mathbf u^{ps}\tag{8}$</p>
 <p>其中$\mathbf a(t)=[a_1(t),a_2(t),…,a_m(t)]^T\in\mathbb R^m$为POD基对应的系数，$\mathbf u^{ps}$为特解$u^{ps}(x,t)$在离散空间的投影。POD基函数可以由对采样数据的奇异值分解(SVD)得到</p>
 <p>$\mathbf B_{N\times k}=[\mathbf u_1,\mathbf u_2,…,\mathbf u_k]=\mathbf U\mathbf \Sigma\mathbf V^T\tag{9}$</p>
 <p>其中$\mathbf u_i$为全阶模型(5)计算出的数值解。POD基函数$\bf\Psi$可以由矩阵$\mathbf U$的前$m$列给出。将(8)带入原系统(5)得到</p>
-<p>$\left\{\begin{aligned}&amp;{\bf\Psi}^T\mathbf M\frac{d({\bf \Psi}\mathbf a(t)+\mathbf u^{ps}(t))}{dt}={\bf\Psi}^T\mathbf A({\bf\Psi}\mathbf a(t)+\mathbf u^{ps}(t))+{\bf\Psi}^T\mathbf f(t)\&amp;a(0)={\bf\Psi}^T(\mathbf u(0)-\mathbf u^{ps}(0))\end{aligned}\right.\tag{10}$</p>
+<p>$\left\{\begin{aligned}{\bf\Psi}^T\mathbf M\frac{d({\bf \Psi}\mathbf a(t)+\mathbf u^{ps}(t))}{dt}={\bf\Psi}^T\mathbf A({\bf\Psi}\mathbf a(t)+\mathbf u^{ps}(t))+{\bf\Psi}^T\mathbf f(t)\\a(0)={\bf\Psi}^T(\mathbf u(0)-\mathbf u^{ps}(0))\end{aligned}\right.\tag{10}$</p>
 <p>再应用$\theta$-scheme求解(10)即可得到$m$维的降阶系统。注意在ROM下，每一次时间迭代仅需求解一个$m$维的线性方程组，这极大的降低了计算量。那么精度有所保证吗？事实上，POD方法的误差可以被如下量控制：</p>
 <p>$\epsilon=\sum_{j=m+1}^{n}\sigma_j^2\tag{11}$</p>
 <p>即若我们使用前$m$的奇异值对应的向量作为POD基的话，其逼近误差由剩余部分奇异值的平方和控制。而实际计算中，奇异值的下降速度一般是极快的，如下图(配点法求解非局部方程的采样矩阵奇异值分布)</p>
@@ -377,7 +377,7 @@
         <p><span>本文标题:</span><a href="/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/">Reduced-Order Model for Nonlocal Problems</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页"></a></p>
         <p><span>发布时间:</span>2021-10-22, 09:19:47</p>
-        <p><span>最后更新:</span>2021-10-22, 18:40:20</p>
+        <p><span>最后更新:</span>2021-10-22, 18:45:02</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/" title="Reduced-Order Model for Nonlocal Problems">http://jslu.top/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/</a>
             <span class="copy-path" data-clipboard-text="原文: http://jslu.top/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
