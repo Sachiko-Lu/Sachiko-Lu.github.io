@@ -15,12 +15,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="幸子的个人博客">
-<meta property="og:url" content="http://jslu.top/archives/2021/10/index.html">
+<meta name="description" content="摘要模型降阶(Reduced-Order Model, ROM)是我前段时间研究用到的数学工具。其思想早在上个世纪70年代就出现在工程界的研究中，主要用于集成电路、计算流体力学、自动控制等领域。经过几十年的发展，已经成为一种系统的数学理论方法和应用工具。在众多模型降阶方法中，本征正交分解(Proper Orthogonal Decomposition, POD)[1]是常用的基于数据驱动的讲解方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reduced-Order Model">
+<meta property="og:url" content="http://jslu.top/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/index.html">
 <meta property="og:site_name" content="幸子的个人博客">
+<meta property="og:description" content="摘要模型降阶(Reduced-Order Model, ROM)是我前段时间研究用到的数学工具。其思想早在上个世纪70年代就出现在工程界的研究中，主要用于集成电路、计算流体力学、自动控制等领域。经过几十年的发展，已经成为一种系统的数学理论方法和应用工具。在众多模型降阶方法中，本征正交分解(Proper Orthogonal Decomposition, POD)[1]是常用的基于数据驱动的讲解方法">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-10-22T01:19:47.000Z">
+<meta property="article:modified_time" content="2021-10-22T02:11:33.160Z">
 <meta property="article:author" content="幸子">
+<meta property="article:tag" content="-计算数学 -建模">
 <meta name="twitter:card" content="summary">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -52,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives: 2021/10 | 幸子的个人博客</title>
+<title>Reduced-Order Model | 幸子的个人博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,8 +67,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -265,97 +270,181 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-非局部建模" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/" class="archive-article-date">
-      <time datetime="2021-10-22T01:19:47.000Z" itemprop="datePublished">10-22</time>
+    <div class="article-meta">
+      <a href="/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/" class="article-date">
+      <time datetime="2021-10-22T01:19:47.000Z" itemprop="datePublished">2021-10-22</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/">Reduced-Order Model</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Reduced-Order Model
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
     <a class="article-category-link" href="/categories/%E7%A7%91%E7%A0%94/">科研</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%95%B0%E5%AD%A6-%E5%BB%BA%E6%A8%A1/" rel="tag">-计算数学 -建模</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2021/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="archive-article-date">
-      <time datetime="2021-10-21T11:51:14.000Z" itemprop="datePublished">10-21</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">第一篇文章</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>模型降阶(Reduced-Order Model, ROM)是我前段时间研究用到的数学工具。其思想早在上个世纪70年代就出现在工程界的研究中，主要用于集成电路、计算流体力学、自动控制等领域。经过几十年的发展，已经成为一种系统的数学理论方法和应用工具。在众多模型降阶方法中，本征正交分解(Proper Orthogonal Decomposition, POD)<sup>[1]</sup>是常用的基于数据驱动的讲解方法。这里简单介绍其在非局部扩散方程<sup>[2]</sup>求解中的应用。</p>
+<p> <code>&lt;!-- more --&gt;</code></p>
+<h2 id="非局部扩散方程"><a href="#非局部扩散方程" class="headerlink" title="非局部扩散方程"></a>非局部扩散方程</h2><p>在现实世界中，许多物理现象都是由方程描述。在过去的研究中，研究者们往往忽略了模型的非局部效应，仅基于物理现象的局部效应建立了大量的微分方程系统(动量守恒、质量守恒、能量守恒、力平衡、本构方程等)，并使用经典的数值方法(有限元、有限差分等)进行数值求解。同时还需要假设材料或者结构变形前、变形后都保持连续，即：质量是连续分布的、内力是一种接触力、位移是二阶连续可导的(在变分原理等表述下放松到$H^1$空间中)，其数学结构等表现是需要计算空间偏导数，这就需要自变量的连续变化、函数的连续变化。显然，随着材料的损伤会伴随着裂纹的萌生与发展，即产生新的界面，这必然破坏原有的数学结构，成为<strong>连续介质假设下数学模型所固有的局限性</strong>。尽管工程力学专家发展了各种断裂理论与技巧，总体上还是定义裂纹为新的界面，依然无法精确提供可靠且具有普适性的裂纹扩展准则。适时出现的近场动力学(Peridynamics, PD)模型<sup>[3]</sup>允许变形不连续，模型中不包含位移场的空间导数，<strong>其使用含奇异核与差分乘积的积分来表征原来模型中导数所起的作用</strong>，并引入水平参数$\delta$刻画微元间相互作用的范围大小。这样，经典连续介质理论下需要的空间导数便转化为空间局部积分，从而相关的物理守恒律、力平衡方程等呈现为相关物理量在$R^n$子域上<strong>重积分的重积分</strong>。这种模型是一种非局部(nonlocal)模型, 在建立初期就在损伤预测、裂纹扩展等方面得以被广泛应用。</p>
+<p>这里考虑如下所示的非局部扩散方程：</p>
+<p>$ \left{\begin{aligned} u_t-\mathcal L_\delta u&amp;=f,x\in\Omega,t\in[0,T] \u(x,0)&amp;=u_0(x),t=0\u(x,t)&amp;=g(x,t),x\in\Omega_I,t\in[0,T] \end{aligned}\right.$</p>
+<p>其中$\mathcal L_\delta$为如下定义的线性非局部扩散算子:</p>
+<p>$\mathcal L_\delta u(x) = \int_{B_\delta(x)} \rho_\delta(x,y)(u(y)-u(x))dy$</p>
+<p>其中$B_\delta(x)$为以$x$为球心半径为$\delta$的球，$\rho_\delta(x,y)$为一具有一定奇异性的核函数。可以看到，若取$\rho_\delta = \frac{1}{||x-y||^2}$, 则该非局部算子可以看做<strong>二阶中心差商的积分平均</strong>。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><font size="2">
+
+<p>[1] Holmes P, Lumley J L, Berkooz G, et al. Turbulence, coherent structures, dynamical systems and symmetry[M]. Cambridge university press, 2012.</p>
+<p>[2] Du Q, Gunzburger M, Lehoucq R B, et al. Analysis and approximation of nonlocal diffusion problems with volume constraints[J]. SIAM review, 2012, 54(4): 667-696.</p>
+</font>
+
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/">Reduced-Order Model</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页"></a></p>
+        <p><span>发布时间:</span>2021-10-22, 09:19:47</p>
+        <p><span>最后更新:</span>2021-10-22, 10:11:33</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/" title="Reduced-Order Model">http://jslu.top/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://jslu.top/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9D%82%E8%B0%88/" rel="tag">杂谈</a></li></ul>
-    </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2021/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">
+                    第一篇文章
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E5%B1%80%E9%83%A8%E6%89%A9%E6%95%A3%E6%96%B9%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">非局部扩散方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-number">3.</span> <span class="toc-text">参考文献</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Reduced-Order Model　| 幸子的个人博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = '/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2021/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" title="下一篇: 第一篇文章">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2021/10/22/%E9%9D%9E%E5%B1%80%E9%83%A8%E5%BB%BA%E6%A8%A1/">Reduced-Order Model</a></li><li class="post-list-item"><a class="post-list-link" href="/2021/10/21/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">第一篇文章</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
