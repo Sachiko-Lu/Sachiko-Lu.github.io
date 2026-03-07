@@ -1,10 +1,10 @@
 {
-  "name": "ALEXANDER \"ALEX\" MORGAN 🍀",
-  "subtitle": "PhD@CS, WCU &nbsp;&nbsp;  BEng@EE, NTU<br><a href=\"#\">Center for AI and Smart Systems</a><br><a href=\"#\">Autonomous Systems and Connected Technologies Lab (ASCT)</a>",
+  "name": "Jiashu Lu",
+  "subtitle": "PhD@Mathematica, NWPU;  BS@Applied Mathematics, NWPU<br><a href=\"#\">Center for Computaional and Applied Mathematics</a><br><a href=\"#\">\</a>",
   "socialLinks": [
     {
       "type": "email",
-      "url": "mailto:alex.morgan@example.com",
+      "url": "jiashulu@mail.nwpu.edu.cn",
       "icon": "<i class=\"fas fa-envelope\"></i>"
     },
     {
@@ -15,37 +15,19 @@
     },
     {
       "type": "googleScholar",
-      "url": "#",
+      "url": "https://scholar.google.com/citations?user=saqjlyQAAAAJ&hl=zh-CN",
       "icon": "<i class=\"fas fa-graduation-cap\"></i>",
       "target": "_blank"
     },
     {
-      "type": "linkedin",
-      "url": "#",
-      "icon": "<i class=\"fab fa-linkedin\"></i>",
-      "target": "_blank"
-    },
-    {
       "type": "github",
-      "url": "#",
+      "url": "https://github.com/Sachiko-Lu",
       "icon": "<i class=\"fab fa-github\"></i>",
       "target": "_blank"
     },
     {
-      "type": "instagram",
-      "url": "#",
-      "icon": "<i class=\"fab fa-instagram\"></i>",
-      "target": "_blank"
-    },
-    {
-      "type": "dblp",
-      "url": "#",
-      "icon": "<img src=\"assets/dblp.svg\" alt=\"DBLP\" class=\"icon-svg\">",
-      "target": "_blank"
-    },
-    {
       "type": "researchgate",
-      "url": "#",
+      "url": "https://www.researchgate.net/profile/Jiashu_Lu?ev=hdr_xprf&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6ImhvbWUiLCJwYWdlIjoiaG9tZSIsInBvc2l0aW9uIjoiZ2xvYmFsSGVhZGVyIn19",
       "icon": "<i class=\"fab fa-researchgate\"></i>",
       "target": "_blank"
     }
