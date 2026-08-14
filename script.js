@@ -209,9 +209,16 @@ function loadPublications() {
     publicationsList.innerHTML = '';
     
     fetch(publicationsJsonPath)
-        .then(response => response.json())
-        .then(publications => {
-            publications.forEach(pub => {
+    .then(response => response.json())
+    .then(publications => {
+        const isAllPublicationsPage =
+            window.location.pathname.includes('all-publications.html');
+
+        const publicationsToShow = isAllPublicationsPage
+            ? publications
+            : publications.slice(0, 5);
+
+        publicationsToShow.forEach(pub => {
                 const pubElement = document.createElement('div');
                 const classes = ['publication', pub.type];
                 if (pub.isFirstAuthor) classes.push('first-author');
