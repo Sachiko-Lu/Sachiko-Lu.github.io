@@ -1,12 +1,12 @@
 /* Base Styles */
 :root {
-    --primary-color: #0066cc;
-    --secondary-color: #f8f9fa;
-    --text-color: #333;
-    --light-text: #757575;
-    --border-color: #e0e0e0;
+    --primary-color: #E85D8E;
+    --secondary-color: #FFF0F5;
+    --text-color: #3F3438;
+    --light-text: #806B73;
+    --border-color: #F6C8D5;
     --section-spacing: 5rem;
-    --timeline-color: #f0f0f0;
+    --timeline-color: #FBE1EA;
 }
 
 * {
@@ -19,7 +19,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #fff;
+    background-color: #FFF9FB;
 }
 
 .container {
@@ -36,7 +36,7 @@ a {
 }
 
 a:hover {
-    color: #004080;
+    color: #C94375;
 }
 
 /* Header Styles */
@@ -126,7 +126,7 @@ h1 {
 
 /* Navigation Styles */
 nav {
-    background-color: #fff;
+    background-color: #FFFDFE;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
@@ -191,7 +191,7 @@ nav {
         left: 0;
         width: 100%;
         z-index: 1000;
-        background-color: #fff;
+        background-color: #FFFDFE;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         overflow: hidden;
     }
