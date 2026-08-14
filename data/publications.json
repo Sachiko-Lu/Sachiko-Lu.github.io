@@ -3,15 +3,19 @@
     "number": 7,
     "title": "A nonlocal nonlinear Schrödinger model: well-posedness, local limit, and structure-preserving asymptotically compatible Fourier approximations",
     "authors": "<strong><u>Jiashu Lu*</u></strong>, Yufeng Nie, Xinning Xie, Pingrui Zhang",
-    "type": "preprints",
+    "type": "preprint",
     "isFirstAuthor": true,
     "venue": "preprint, 2025.",
     "tags": [
       {
-        "text": "PDF",
-        "class": "code-tag",
-        "link": "https://arxiv.org/abs/2608.09372"
-      }
+      "text": "Preprint",
+      "class": "preprint-tag"
+    },
+    {
+      "text": "PDF",
+      "class": "code-tag",
+      "link": "https://arxiv.org/abs/2608.09372"
+    }
     ]
   },
   {
