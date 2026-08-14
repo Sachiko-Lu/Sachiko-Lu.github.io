@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Publications - Jiashu Lu</title>
+
+    <link rel="stylesheet" href="../styles.css?v=20260814-3">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-info">
+                    <!-- Profile info will be loaded from JSON -->
+                </div>
+
+                <div class="profile-image">
+                    <img src="../assets/profile2.jpg"
+                         alt="Jiashu Lu"
+                         id="profile-img">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#" class="active">All Publications</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="all-publications" class="section">
+            <div class="container">
+                <h2 class="section-title">All Publications</h2>
+
+                <p class="section-description">
+                    <sup>#</sup> equal contribution,
+                    * corresponding author.
+                </p>
+
+                <div class="publication-filter">
+                    <button class="filter-btn active" data-filter="all">
+                        All
+                    </button>
+
+                    <button class="filter-btn" data-filter="preprint">
+                        Preprints
+                    </button>
+
+                    <button class="filter-btn" data-filter="accepted">
+                        Accepted
+                    </button>
+
+                    <button class="filter-btn" data-filter="first-author">
+                        First Author
+                    </button>
+                </div>
+
+                <div class="publications-list">
+                    <!-- All publications will be loaded here -->
+                </div>
+
+                <div class="back-to-home">
+                    <a href="../index.html#publications"
+                       class="btn btn-primary">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Homepage
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                &copy; <span id="copyright-year"></span>
+                <a href="https://github.com/dl-m9/academic-homepage-modernism">
+                    academic-homepage-modernism
+                </a>.
+                All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('copyright-year').textContent =
+            new Date().getFullYear();
+    </script>
+
+    <script src="../script.js?v=20260814-3"></script>
+</body>
+</html>
