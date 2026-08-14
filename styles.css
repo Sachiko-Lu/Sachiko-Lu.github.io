@@ -855,14 +855,14 @@ nav {
 }
 
 /* Light purple color for highlight tags, rating tags, and code/blog tags */
-.highlight-tag, .code-tag, .blog-tag {
+.highlight-tag, .blog-tag {
     background-color: #e8eaf6;
     color: #3f51b5;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.code-tag:hover, .blog-tag:hover {
+.blog-tag:hover {
     background-color: #3f51b5;
     color: white;
 }
