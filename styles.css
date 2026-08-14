@@ -1172,9 +1172,11 @@ footer {
 }
 
 .btn-primary:hover {
-    background-color: #0052a3;
-    border-color: #0052a3;
-    color: white;
+    background-color: #C94375;
+    border-color: #C94375;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(201, 67, 117, 0.25);
 }
 
 .btn i {
