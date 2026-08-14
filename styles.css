@@ -829,14 +829,29 @@ nav {
 
 /* Gray color for preprint tags */
 .preprint-tag {
-    background-color: #f0f0f0;
-    color: #666;
+    background-color: #FFE4EC;
+    color: #C94375;
+    border: 1px solid #F6C8D5;
+}
+.code-tag {
+    background-color: #F2E8FF;
+    color: #8655B5;
+    border: 1px solid #DCC8F2;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
+/* 鼠标放到 PDF 标签上 */
+.code-tag:hover {
+    background-color: #8655B5;
+    color: #FFFFFF;
+    border-color: #8655B5;
+}
 /* Light blue color for venue tags (accepted papers) */
 .venue-tag {
-    background-color: #e1f5fe;
-    color: #0288d1;
+    background-color: #E8F8F0;
+    color: #3D8B6D;
+    border: 1px solid #BFE8D4;
 }
 
 /* Light purple color for highlight tags, rating tags, and code/blog tags */
