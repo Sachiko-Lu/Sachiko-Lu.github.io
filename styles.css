@@ -42,8 +42,8 @@ a:hover {
 /* Header Styles */
 header {
     padding: 3rem 0;
-    background-color: var(--secondary-color);
-    border-bottom: 1px solid var(--border-color);
+    background-color: #FFE4EC;
+    border-bottom: 1px solid #F6C8D5;
 }
 
 .header-content {
