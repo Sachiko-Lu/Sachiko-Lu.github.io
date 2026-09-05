@@ -131,13 +131,13 @@ h1 {
     gap: 1rem;
     margin-top: 2rem;
 
-    font-family: 'Yuji Syuku', 'Yu Mincho',
-                 'Hiragino Mincho ProN', serif;
+    font-family: 'Hachi Maru Pop', 'Yu Gothic', 
+        sans-serif;
     font-size: 1.15rem;
     line-height: 1.8;
     letter-spacing: 0.08em;
     text-align: center;
-    color: #96516A;
+    color: #7C5AA6;
 }
 
 .favorite-lyric p {
@@ -147,12 +147,12 @@ h1 {
 
 .favorite-lyric p::before {
     content: '「';
-    color: #D782A0;
+    color: #B58BD0;
 }
 
 .favorite-lyric p::after {
     content: '」';
-    color: #D782A0;
+    color: #B58BD0;
 }
 
 .lyric-decoration {
@@ -162,7 +162,7 @@ h1 {
     background: linear-gradient(
         to right,
         transparent,
-        #E3A4B8
+        #D7BFEA
     );
 }
 
@@ -170,7 +170,7 @@ h1 {
     background: linear-gradient(
         to left,
         transparent,
-        #E3A4B8
+        #D7BFEA
     );
 }
 
