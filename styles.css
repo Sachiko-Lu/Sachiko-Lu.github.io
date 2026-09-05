@@ -131,11 +131,12 @@ h1 {
     gap: 1rem;
     margin-top: 2rem;
 
-    font-family: 'Hachi Maru Pop', 'Yu Gothic', 
-        sans-serif;
+    font-family: 'Zen Maru Gothic', 'Hiragino Kaku Gothic ProN',
+        'Yu Gothic', sans-serif;
     font-size: 1.15rem;
+    font-weight: 500;
     line-height: 1.8;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     text-align: center;
     color: #7C5AA6;
 }
