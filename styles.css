@@ -123,7 +123,71 @@ h1 {
     height: 1.8rem;
     filter: invert(26%) sepia(92%) saturate(1361%) hue-rotate(212deg) brightness(92%) contrast(90%);
 }
+/* Favorite lyric */
+.favorite-lyric {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
 
+    font-family: 'Yuji Syuku', 'Yu Mincho',
+                 'Hiragino Mincho ProN', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    letter-spacing: 0.08em;
+    text-align: center;
+    color: #96516A;
+}
+
+.favorite-lyric p {
+    margin: 0;
+    text-wrap: balance;
+}
+
+.favorite-lyric p::before {
+    content: '「';
+    color: #D782A0;
+}
+
+.favorite-lyric p::after {
+    content: '」';
+    color: #D782A0;
+}
+
+.lyric-decoration {
+    width: clamp(32px, 7vw, 90px);
+    height: 1px;
+    flex-shrink: 0;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #E3A4B8
+    );
+}
+
+.lyric-decoration:last-child {
+    background: linear-gradient(
+        to left,
+        transparent,
+        #E3A4B8
+    );
+}
+
+/* 手机端 */
+@media (max-width: 576px) {
+    .favorite-lyric {
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.7;
+        letter-spacing: 0.04em;
+    }
+
+    .lyric-decoration {
+        width: 22px;
+    }
+}
 /* Navigation Styles */
 nav {
     background-color: #FFFDFE;
