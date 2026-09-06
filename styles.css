@@ -146,10 +146,6 @@ h1 {
     text-wrap: balance;
 }
 
-.lyric-second-line::before {
-    content: ' ';
-}
-
 .favorite-lyric p::before {
     content: '「';
     color: #B58BD0;
@@ -191,10 +187,6 @@ h1 {
 
     .lyric-second-line {
         display: block;
-    }
-
-    .lyric-second-line::before {
-        content: '';
     }
 
     .lyric-decoration {
