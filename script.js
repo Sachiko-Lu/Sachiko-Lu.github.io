@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Load publications data from JSON file
     loadPublications();
+
+    // Load teaching data from JSON file
+    loadTeaching();
     
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -286,6 +289,54 @@ function loadPublications() {
         .catch(error => {
             console.error('Error loading publications data:', error);
         });
+}
+
+// Function to load teaching courses from JSON
+function loadTeaching() {
+    let teachingJsonPath = 'data/teaching.json';
+    if (window.location.pathname.includes('/pages/')) {
+        teachingJsonPath = '../data/teaching.json';
+    }
+
+    fetch(teachingJsonPath)
+        .then(response => response.json())
+        .then(courses => {
+            const homepageContainer = document.getElementById('teaching-container');
+            if (homepageContainer) {
+                renderTeachingRows(courses.slice(0, 5), homepageContainer);
+            }
+
+            const allTeachingContainer = document.getElementById('all-teaching-container');
+            if (allTeachingContainer) {
+                renderTeachingRows(courses, allTeachingContainer);
+            }
+        })
+        .catch(error => {
+            console.error('Error loading teaching data:', error);
+        });
+}
+
+// Function to render teaching table rows
+function renderTeachingRows(courses, container) {
+    container.innerHTML = '';
+
+    courses.forEach(course => {
+        const row = document.createElement('tr');
+
+        const courseCell = document.createElement('td');
+        courseCell.textContent = course.course;
+
+        const termCell = document.createElement('td');
+        termCell.textContent = course.term;
+
+        const audienceCell = document.createElement('td');
+        audienceCell.textContent = course.audience;
+
+        row.appendChild(courseCell);
+        row.appendChild(termCell);
+        row.appendChild(audienceCell);
+        container.appendChild(row);
+    });
 }
 
 // Function to render news items
