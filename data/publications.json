@@ -1,5 +1,24 @@
 [
   {
+    "number": 8,
+    "title": "A mesh- and horizon-robust preconditioner for finite element discretizations of volume-constrained nonlocal diffusion problems",
+    "authors": "<strong><u>Jiashu Lu*</u></strong>, Yufeng Nie, Haolun Zhang, Pingrui Zhang",
+    "type": "preprint",
+    "isFirstAuthor": true,
+    "venue": "preprint, 2026.",
+    "tags": [
+      {
+      "text": "Preprint",
+      "class": "preprint-tag"
+    },
+    {
+      "text": "PDF",
+      "class": "code-tag",
+      "link": "https://arxiv.org/abs/2609.24143"
+    }
+    ]
+  },
+  {
     "number": 7,
     "title": "A nonlocal nonlinear Schrödinger model: well-posedness, local limit, and structure-preserving asymptotically compatible Fourier approximations",
     "authors": "<strong><u>Jiashu Lu*</u></strong>, Yufeng Nie, Xinning Xie, Pingrui Zhang",
