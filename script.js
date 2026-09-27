@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set up MutationObserver to watch for dynamically added links
     setupLinkObserver();
 
-    // Publication filters - including "First Author" for publications where user is first author or has equal contribution
+    // Publication filters, including first-author and corresponding-author papers
     const filterBtns = document.querySelectorAll('.filter-btn');
     const publications = document.querySelectorAll('.publication');
     
@@ -225,6 +225,7 @@ function loadPublications() {
                 const pubElement = document.createElement('div');
                 const classes = ['publication', pub.type];
                 if (pub.isFirstAuthor) classes.push('first-author');
+                if (pub.isCorrespondingAuthor) classes.push('corresponding-author');
                 pubElement.className = classes.join(' ');
                 
                 // Create publication number
