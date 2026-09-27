@@ -211,7 +211,8 @@ function loadPublications() {
     // Clear existing publications
     publicationsList.innerHTML = '';
     
-    fetch(publicationsJsonPath)
+    // Always revalidate publication data so newly added papers appear immediately.
+    fetch(publicationsJsonPath, { cache: 'no-store' })
     .then(response => response.json())
     .then(publications => {
         const isAllPublicationsPage =
