@@ -5,6 +5,7 @@
     "authors": "<strong><u>Jiashu Lu*</u></strong>, Yufeng Nie, Haolun Zhang, Pingrui Zhang",
     "type": "preprint",
     "isFirstAuthor": true,
+    "isCorrespondingAuthor": true,
     "venue": "preprint, 2026.",
     "tags": [
       {
@@ -24,6 +25,7 @@
     "authors": "<strong><u>Jiashu Lu*</u></strong>, Yufeng Nie, Xinning Xie, Pingrui Zhang",
     "type": "preprint",
     "isFirstAuthor": true,
+    "isCorrespondingAuthor": true,
     "venue": "preprint, 2026.",
     "tags": [
       {
@@ -43,6 +45,7 @@
     "authors": "Mengna Yang, <strong><u>Jiashu Lu</u></strong>, Yufeng Nie*",
     "type": "accepted",
     "isFirstAuthor": false,
+    "isCorrespondingAuthor": false,
     "venue": "Applicable Analysis, 2025.",
     "tags": [
       {
@@ -58,6 +61,7 @@
     "authors": "<strong><u>Jiashu Lu*</u></strong>, Lei Zhang, Xuncheng Guo, Qiong Qi",
     "type": "accepted",
     "isFirstAuthor": true,
+    "isCorrespondingAuthor": true,
     "venue": "Applied Mathematics Letters, 2025.",
     "tags": [
       {
@@ -73,6 +77,7 @@
     "authors": "<strong><u>Jiashu Lu</u></strong>, Qingyu Zhang, Lijing Zhao*, Yufeng Nie",
     "type": "accepted",
     "isFirstAuthor": true,
+    "isCorrespondingAuthor": false,
     "venue": "International Journal of Computational Methods, 2023.",
     "tags": [
       {
@@ -88,6 +93,7 @@
     "authors": "<strong><u>Jiashu Lu</u></strong>, Yufeng Nie*",
     "type": "accepted",
     "isFirstAuthor": true,
+    "isCorrespondingAuthor": false,
     "venue": "Computers & Mathematics with Applications, 2022.",
     "tags": [
       {
@@ -103,6 +109,7 @@
     "authors": "<strong><u>Jiashu Lu</u></strong>, Mengna Yang, Yufeng Nie*",
     "type": "accepted",
     "isFirstAuthor": true,
+    "isCorrespondingAuthor": false,
     "venue": "Applied Mathematics and Computation, 2022.",
     "tags": [
       {
@@ -118,6 +125,7 @@
     "authors": "<strong><u>Jiashu Lu</u></strong>, Yufeng Nie*",
     "type": "accepted",
     "isFirstAuthor": true,
+    "isCorrespondingAuthor": false,
     "venue": "Computational & Applied Mathematics, 2021.",
     "tags": [
       {
