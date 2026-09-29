@@ -1,5 +1,21 @@
 [
   {
+    "number": 9,
+    "title": "A crack-adapted Schwarz smoothing multigrid method with incrementally updated Galerkin projections for implicit quasi-static crack propagation in peridynamics",
+    "authors": "Xinning Xie, Haolun Zhang, <strong><u>Jiashu Lu</u></strong>, Yufeng Nie*",
+    "type": "accepted",
+    "isFirstAuthor": false,
+    "isCorrespondingAuthor": false,
+    "venue": "Computer Methods in Applied Mechanics and Engineering, 2027.",
+    "tags": [
+      {
+      "text": "PDF",
+      "class": "code-tag",
+      "link": "https://www.sciencedirect.com/science/article/abs/pii/S0045782526007231"
+      }
+    ]
+    },
+  {
     "number": 8,
     "title": "A mesh- and horizon-robust preconditioner for finite element discretizations of volume-constrained nonlocal diffusion problems",
     "authors": "<strong><u>Jiashu Lu*</u></strong>, Yufeng Nie, Haolun Zhang, Pingrui Zhang",
