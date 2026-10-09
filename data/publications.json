@@ -6,6 +6,7 @@
     "type": "accepted",
     "isFirstAuthor": false,
     "isCorrespondingAuthor": false,
+    "featured": false,
     "venue": "Computer Methods in Applied Mechanics and Engineering, 2027.",
     "tags": [
       {
@@ -22,6 +23,7 @@
     "type": "accepted",
     "isFirstAuthor": false,
     "isCorrespondingAuthor": true,
+    "featured": true,
     "venue": "Journal of Scientific Computing, 2026.",
     "tags": [
       {
@@ -38,6 +40,7 @@
     "type": "preprint",
     "isFirstAuthor": true,
     "isCorrespondingAuthor": true,
+    "featured": true,
     "venue": "preprint, 2026.",
     "tags": [
       {
@@ -58,6 +61,7 @@
     "type": "preprint",
     "isFirstAuthor": true,
     "isCorrespondingAuthor": true,
+    "featured": true,
     "venue": "preprint, 2026.",
     "tags": [
       {
@@ -78,6 +82,7 @@
     "type": "accepted",
     "isFirstAuthor": false,
     "isCorrespondingAuthor": false,
+    "featured": false,
     "venue": "Applicable Analysis, 2025.",
     "tags": [
       {
@@ -94,6 +99,7 @@
     "type": "accepted",
     "isFirstAuthor": true,
     "isCorrespondingAuthor": true,
+    "featured": false,
     "venue": "Applied Mathematics Letters, 2025.",
     "tags": [
       {
@@ -110,6 +116,7 @@
     "type": "accepted",
     "isFirstAuthor": true,
     "isCorrespondingAuthor": false,
+    "featured": false,
     "venue": "International Journal of Computational Methods, 2023.",
     "tags": [
       {
@@ -126,6 +133,7 @@
     "type": "accepted",
     "isFirstAuthor": true,
     "isCorrespondingAuthor": false,
+    "featured": true,
     "venue": "Computers & Mathematics with Applications, 2022.",
     "tags": [
       {
@@ -142,6 +150,7 @@
     "type": "accepted",
     "isFirstAuthor": true,
     "isCorrespondingAuthor": false,
+    "featured": false,
     "venue": "Applied Mathematics and Computation, 2022.",
     "tags": [
       {
@@ -158,6 +167,7 @@
     "type": "accepted",
     "isFirstAuthor": true,
     "isCorrespondingAuthor": false,
+    "featured": false,
     "venue": "Computational & Applied Mathematics, 2021.",
     "tags": [
       {
