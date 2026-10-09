@@ -220,7 +220,7 @@ function loadPublications() {
 
         const publicationsToShow = isAllPublicationsPage
             ? publications
-            : publications.slice(0, 5);
+            : publications.filter(pub => pub.featured === true);
 
         publicationsToShow.forEach(pub => {
                 const pubElement = document.createElement('div');
@@ -228,11 +228,6 @@ function loadPublications() {
                 if (pub.isFirstAuthor) classes.push('first-author');
                 if (pub.isCorrespondingAuthor) classes.push('corresponding-author');
                 pubElement.className = classes.join(' ');
-                
-                // Create publication number
-                const numberElement = document.createElement('span');
-                numberElement.className = 'pub-number';
-                numberElement.textContent = pub.number;
                 
                 // Create publication content container
                 const contentElement = document.createElement('div');
@@ -283,7 +278,13 @@ function loadPublications() {
                 contentElement.appendChild(tagsContainer);
                 
                 // Combine elements and add to publications list
-                pubElement.appendChild(numberElement);
+                // Numbers are shown only on the complete publications page.
+                if (isAllPublicationsPage) {
+                    const numberElement = document.createElement('span');
+                    numberElement.className = 'pub-number';
+                    numberElement.textContent = pub.number;
+                    pubElement.appendChild(numberElement);
+                }
                 pubElement.appendChild(contentElement);
                 publicationsList.appendChild(pubElement);
             });
