@@ -1016,14 +1016,10 @@ nav {
 .publication {
     display: flex;
     background-color: var(--secondary-color);
+    border-left: 3px solid var(--primary-color);
     border-radius: 4px;
     overflow: hidden;
     transition: transform 0.3s ease;
-}
-
-/* Subtle left border for first-author papers */
-.publication.first-author {
-    border-left: 3px solid var(--primary-color);
 }
 
 .publication:hover {
