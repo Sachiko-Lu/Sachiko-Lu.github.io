@@ -1,6 +1,6 @@
 [
   {
-    "number": 9,
+    "number": 10,
     "title": "A crack-adapted Schwarz smoothing multigrid method with incrementally updated Galerkin projections for implicit quasi-static crack propagation in peridynamics",
     "authors": "Xinning Xie, Haolun Zhang, <strong><u>Jiashu Lu</u></strong>, Yufeng Nie*",
     "type": "accepted",
@@ -12,6 +12,22 @@
       "text": "PDF",
       "class": "code-tag",
       "link": "https://www.sciencedirect.com/science/article/abs/pii/S0045782526007231"
+      }
+    ]
+    },
+  {
+    "number": 9,
+    "title": "A robust two-stage, high-order structure-preserving method for the nonlinear Schrödinger–Poisson system",
+    "authors": "Pingrui Zhang, Shixuan Lai, Yufeng Nie, <strong><u>Jiashu Lu*</u></strong>",
+    "type": "accepted",
+    "isFirstAuthor": false,
+    "isCorrespondingAuthor": true,
+    "venue": "Journal of Scientific Computing, 2026.",
+    "tags": [
+      {
+      "text": "To appear",
+      "class": "code-tag",
+      "link": ""
       }
     ]
     },
