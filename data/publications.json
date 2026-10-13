@@ -1,6 +1,6 @@
 [
   {
-    "number": 10,
+    "number": 11,
     "title": "A crack-adapted Schwarz smoothing multigrid method with incrementally updated Galerkin projections for implicit quasi-static crack propagation in peridynamics",
     "authors": "Xinning Xie, Haolun Zhang, <strong><u>Jiashu Lu</u></strong>, Yufeng Nie*",
     "type": "accepted",
@@ -13,6 +13,23 @@
       "text": "PDF",
       "class": "code-tag",
       "link": "https://www.sciencedirect.com/science/article/abs/pii/S0045782526007231"
+      }
+    ]
+    },
+  {
+    "number": 10,
+    "title": "Numerical analysis of the Jacobi spectral collocation method for high-dimensional volume-constrained nonlocal models with weakly singular kernels",
+    "authors": "<strong><u>Jiashu Lu*</u></strong>, Mengna Yang, Haolun Zhang, Xinning Xie, Yufeng Nie",
+    "type": "accepted",
+    "isFirstAuthor": true,
+    "isCorrespondingAuthor": true,
+    "featured": false,
+    "venue": "Numerical Methods for Partial Differential Equations, 2026.",
+    "tags": [
+      {
+      "text": "To appear",
+      "class": "code-tag",
+      "link": ""
       }
     ]
     },
