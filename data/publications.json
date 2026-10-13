@@ -23,7 +23,7 @@
     "type": "accepted",
     "isFirstAuthor": true,
     "isCorrespondingAuthor": true,
-    "featured": false,
+    "featured": true,
     "venue": "Numerical Methods for Partial Differential Equations, 2026.",
     "tags": [
       {
